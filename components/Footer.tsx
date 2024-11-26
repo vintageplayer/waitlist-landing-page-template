@@ -49,7 +49,7 @@ const Footer = () => {
         <div className="w-11/12 xl:w-[1050px] mx-auto pb-16">
           © 2024 -
           <Link
-            href="https://x.com/artsofbaniya"
+            href="https://artsofbaniya.com/"
             passHref
             legacyBehavior
           >
