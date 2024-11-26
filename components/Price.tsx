@@ -3,7 +3,7 @@ import config from "@/config/general";
 
 const Price = () => {
   return (
-    <div className="mb-24">
+    <div className="mb-24" id="pricing">
       <div className="bg-grayBackground rounded-md">
         <div className="w-11/12 xl:w-[1050px] mx-auto py-16">
           <p className="font-light text-2xl text-activeButton text-center">
@@ -21,7 +21,7 @@ const Price = () => {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-col items-center gap-5">
+            <div className="flex flex-col items-center gap-5 hidden">
               <span className="text-4xl font-bold text-activeButton">
                 {config.contents.price.price}/month
               </span>

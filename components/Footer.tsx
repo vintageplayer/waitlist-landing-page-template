@@ -22,9 +22,9 @@ const Footer = () => {
               Links
             </span>
             <ul className="font-medium flex flex-col gap-2 mt-4 text-activeButton">
-              <li>How it works</li>
-              <li>Price</li>
-              <li>FAQ</li>
+              <li><Link href="#how-it-works">How it works</Link></li>
+              <li><Link href="#about">Features</Link></li>
+              <li><Link href="#faq">FAQ</Link></li>
               <li>Support</li>
             </ul>
           </div>
@@ -37,11 +37,19 @@ const Footer = () => {
               <li>Privact policy</li>
             </ul>
           </div>
+          <div>
+            <span className="uppercase text-[#8d8d8d] font-semibold">
+              Social
+            </span>
+            <ul className="font-medium flex flex-col gap-2 mt-4 text-activeButton">
+              <li><Link href={config.socials.twitter} target="_blank">Twitter</Link></li>
+            </ul>
+          </div>
         </div>
         <div className="w-11/12 xl:w-[1050px] mx-auto pb-16">
-          © 2023 -
+          © 2024 -
           <Link
-            href="https://twitter.com/beratbozkurt0/status/1699164095994372577"
+            href="https://x.com/artsofbaniya"
             passHref
             legacyBehavior
           >
@@ -50,7 +58,7 @@ const Footer = () => {
               className="underline underline-offset-2"
               rel="noopener noreferrer"
             >
-              #buildinpublic
+            &nbsp;SunnySideLabs Inc.
             </a>
           </Link>
         </div>

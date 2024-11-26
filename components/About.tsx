@@ -4,7 +4,7 @@ import config from "@/config/general";
 
 const About = () => {
   return (
-    <div className="mt-16 xl:mt-0 flex lg:flex-row flex-col justify-between gap-4 mb-24">
+    <div className="mt-16 xl:mt-0 flex lg:flex-row flex-col justify-between gap-4 mb-24" id="about">
       {config.contents.about.map((item) => (
         <div
           key={item.id}

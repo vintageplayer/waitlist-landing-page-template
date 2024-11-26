@@ -9,12 +9,12 @@ const HowWorks = () => {
   const [activeTitle, setActiveTitle] = useState(0);
 
   return (
-    <div className="mb-24">
+    <div className="mb-24" id="how-it-works">
       <Title label="How it works" />
       <div className="flex xl:flex-row flex-col gap-8 justify-center">
         <Image
-          src="/hero.jpg"
-          alt="hero"
+          src="/howitworks.jpg"
+          alt="how it works"
           width={460}
           height={330}
           className="xl:w-[460px] w-full xl:order-1 order-2 rounded-sm h-max"
