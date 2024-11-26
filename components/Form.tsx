@@ -21,24 +21,48 @@ const Form = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
 
-  const onSubmit = (e: any) => {
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const onSubmit = async (e: any) => {
     e.preventDefault();
+    setMessage("Getting you on the waitlist... 🚀");
     setLoading(true);
-    fetch(findRequestURL(mail), {
+    // fetch(findRequestURL(mail), {
+    //   method: "POST",
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     if (data.success) {
+    //       setMessage("Thanks for subscribing!");
+    //     } else {
+    //       setMessage("Something went wrong, please try again.");
+    //     }
+    //   })
+    //   .catch(() => setMessage("Something went wrong, please try again."))
+    //   .finally(() => {
+    //     setMail("");
+    //   });
+    const notionResponse = await fetch("/api/notion", {
       method: "POST",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          setMessage("Thanks for subscribing!");
-        } else {
-          setMessage("Something went wrong, please try again.");
-        }
-      })
-      .catch(() => setMessage("Something went wrong, please try again."))
-      .finally(() => {
-        setMail("");
-      });
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: mail }),
+    });
+
+    if (!notionResponse.ok) {
+      if (notionResponse.status === 429) {
+        setMessage("You're doing that too much. Please try again later");
+      } else {
+        setMessage("Failed to save your details. Please try again 😢.");
+      }
+    } else {
+      setMessage("Thank you for joining the waitlist 🎉");
+    }
+    setLoading(false);
   };
   return (
     <form onSubmit={onSubmit}>
@@ -63,7 +87,7 @@ const Form = () => {
           <button
             type="submit"
             className="relative sm:absolute right-2 sm:top-2 w-full sm:w-auto block  rounded-sm bg-activeButton py-3 px-4 font-medium text-white shadow hover:bg-activeButton disabled:cursor-not-allowed"
-            disabled={mail === "" || loading}
+            disabled={mail === "" || loading || !isValidEmail(mail)}
           >
             Join Waitlist
           </button>

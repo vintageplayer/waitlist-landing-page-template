@@ -18,7 +18,7 @@ const Header = () => {
               </a>
             </Link>
           </li>
-          <li className="bg-activeButton text-white rounded py-2">
+          <li className="bg-activeButton text-white rounded py-2 hidden">
             <Link href={config.subscribeForm} passHref legacyBehavior>
               <a
                 className="px-5 py-2 rounded"
