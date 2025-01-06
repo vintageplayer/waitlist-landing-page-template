@@ -1,7 +1,7 @@
 
 # Waitlist Landing Page
 
-If you are looking for a simple and effective waitlist page, this is the right place. Fork it and start using it :) 
+If you are looking for a simple and effective waitlist page, this is the right place. Fork it and start using it :)
 
 [Demo](https://waitlist-landing-page.vercel.app/)
 ![](./screenshot.jpg)
@@ -12,6 +12,13 @@ If you are looking for a simple and effective waitlist page, this is the right p
 - You need to create an embedded-form on MailerLite. Then you can use the form.
 - We have some images and you can change them in the `public` folder.
 - Don't forget to change the footer. I put some dummy data on it.
+
+## Updating the content
+- You can easily use ChatGPT to write the content and update the config file. [Sample prompt](https://chatgpt.com/share/677bfe7b-fa00-8006-b278-a1405d9b33da).
+- Use [unsplash]() to download the hero images. This can be automated using their [API](https://chatgpt.com/share/677bfe7b-fa00-8006-b278-a1405d9b33da). I found the top hits to be the best ones. I ended up downloading the best 2 manually.
+- There are other stock image websites (with APIs too): [https://shotstack.io/learn/best-stock-image-video-apis/](https://shotstack.io/learn/best-stock-image-video-apis/)
+- For logo, you can use an SVG generator with options for custom font
+
 
 ## Tech Stack
 - Developed with **Next.js**.
